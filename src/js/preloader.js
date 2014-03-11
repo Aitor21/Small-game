@@ -15,11 +15,13 @@
       this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
       this.load.setPreloadSprite(this.asset);
       this.load.image('player', 'assets/player.png');
+      this.load.image('mine', 'assets/Bee_Mine.png');
       this.load.bitmapFont('minecraftia', 'assets/minecraftia.png', 'assets/minecraftia.xml');
     },
 
     create: function () {
       this.asset.cropEnabled = false;
+      this.add.sprite(0, 0, 'mine');
     },
 
     update: function () {
