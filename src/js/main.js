@@ -1,4 +1,5 @@
-window.onload = function () {
+window.onload = function ()
+{
   'use strict';
 
   var game
@@ -10,6 +11,5 @@ window.onload = function () {
   game.state.add('endgame', ns.Endgame);
   game.state.add('menu', ns.Menu);
   game.state.add('game', ns.Game);
-
   game.state.start('boot');
 };

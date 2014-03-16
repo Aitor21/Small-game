@@ -1,36 +1,42 @@
-(function() {
+(function()
+{
   'use strict';
-
-  function Preloader() {
+  function Preloader()
+  {
     this.asset = null;
     this.ready = false;
   }
 
-  Preloader.prototype = {
-
-    preload: function () {
+  Preloader.prototype =
+  {
+    preload: function ()
+    {
       this.asset = this.add.sprite(320, 240, 'preloader');
       this.asset.anchor.setTo(0.5, 0.5);
-
       this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
       this.load.setPreloadSprite(this.asset);
       this.load.image('player', 'assets/player.png');
       this.load.image('enemy', 'assets/enemy sprite.png');
       this.load.image('background', 'assets/minijuego bg.png');
       this.load.bitmapFont('minecraftia', 'assets/minecraftia.png', 'assets/minecraftia.xml');
+      this.load.spritesheet('abc','assets/buttonsminigame.png', 426, 94);
     },
 
-    create: function () {
+    create: function ()
+    {
       this.asset.cropEnabled = false;
     },
 
-    update: function () {
-      if (!!this.ready) {
+    update: function ()
+    {
+      if (!!this.ready)
+      {
         this.game.state.start('menu');
       }
     },
 
-    onLoadComplete: function () {
+    onLoadComplete: function ()
+    {
       this.ready = true;
     }
   };

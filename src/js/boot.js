@@ -1,21 +1,26 @@
-(function () {
+(function ()
+{
   'use strict';
+  function Boot()
+  {
 
-  function Boot() {}
-
-  Boot.prototype = {
-    
-    preload: function () {
+  }
+  Boot.prototype =
+  {
+    preload: function ()
+    {
       this.load.image('preloader', 'assets/preloader.gif');
     },
 
-    create: function () {
+    create: function ()
+    {
       this.game.input.maxPointers = 1;
-      // this.game.stage.disableVisibilityChange = true;
-
-      if (this.game.device.desktop) {
+      if (this.game.device.desktop)
+      {
         this.game.stage.scale.pageAlignHorizontally = true;
-      } else {
+      } 
+      else
+      {
         this.game.stage.scaleMode = Phaser.StageScaleMode.SHOW_ALL;
         this.game.stage.scale.minWidth =  1000;
         this.game.stage.scale.minHeight = 1080;
